@@ -1,0 +1,80 @@
+{
+  "project_root": ".",
+  "input_dir": "data/input",
+  "template_dir": "data/templates",
+  "output_dir": "data/output",
+  "screenshot_dir": "data/screenshots",
+  "from_date": "2026-06-15",
+  "to_date": "",
+  "api_base_url": "",
+  "summary_threshold_days": 5,
+  "delete_keywords": [
+    "Construction",
+    "Grand Total"
+  ],
+  "delete_columns": [
+    "J",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y"
+  ],
+  "raw_file_pattern": "raw_{branch}_{date}.xlsx",
+  "clean_file_pattern": "clean_{branch}_{date}.xlsx",
+  "report_test_file_pattern": "report_test_{branch}_{date}.xlsx",
+  "report_file_pattern": "report_{branch}_{date}.xlsx",
+  "branches": [
+    {
+      "name": "Branch_A",
+      "branch_id": 1,
+      "exclude_employee_ids": [],
+      "remark_employee_ids": {},
+      "report_range": "D20:O22",
+      "screenshot_range": "A1:O24"
+    },
+    {
+      "name": "Branch_B",
+      "branch_id": 2,
+      "exclude_employee_ids": [
+        "EMP_DEMO_999"
+      ],
+      "remark_employee_ids": {
+        "EMP_DEMO_002": "Assigned to another demo branch"
+      },
+      "report_range": "D20:P22",
+      "screenshot_range": "A1:P24"
+    },
+    {
+      "name": "Branch_C",
+      "branch_id": 3,
+      "exclude_employee_ids": [
+        "EMP_DEMO_999"
+      ],
+      "remark_employee_ids": {},
+      "report_range": "D20:O22",
+      "screenshot_range": "A1:O24"
+    }
+  ],
+  "consolidated_summary": {
+    "template_branch": "Branch_A",
+    "summary_range": "D30:Q38",
+    "output_file": "consolidated_summary_{date}.xlsx",
+    "equal_wording": {
+      "amount": "Leave balance unchanged",
+      "percent": "Change percentage unchanged"
+    },
+    "decrease_wording": {
+      "amount": "Leave balance decreased",
+      "percent": "Decrease percentage"
+    },
+    "increase_wording": {
+      "amount": "Leave balance increased",
+      "percent": "Increase percentage"
+    }
+  }
+}
